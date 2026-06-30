@@ -42,90 +42,15 @@ type Proof = {
   title: string;
   desc: string;
   href: string;
-  open: string;
-  visual: React.ReactNode;
 };
 
-// MDP: a source panel feeding a validated artifact through a pulsing wire (the
-// MCP/agent surface + self-healing validation loop).
-const MdpVisual = (
-  <svg className="or-vis" viewBox="0 0 220 120" aria-hidden="true" focusable="false">
-    <rect className="or-vis__panel" x="14" y="26" width="78" height="68" rx="12" />
-    <rect className="or-vis__line" x="24" y="38" width="44" height="6" rx="3" />
-    <rect className="or-vis__line or-vis__line--soft" x="24" y="52" width="58" height="4" rx="2" />
-    <rect className="or-vis__line or-vis__line--soft" x="24" y="62" width="40" height="4" rx="2" />
-    <rect className="or-vis__line or-vis__line--soft" x="24" y="76" width="50" height="4" rx="2" />
-    <line className="or-vis__wire" x1="94" y1="60" x2="128" y2="60" />
-    <line className="or-vis__flow" x1="94" y1="60" x2="128" y2="60" />
-    <circle className="or-vis__pulse" r="3.5" />
-    <rect className="or-vis__art" x="130" y="22" width="76" height="76" rx="12" />
-    <rect className="or-vis__art-bar" x="140" y="34" width="46" height="8" rx="4" />
-    <rect className="or-vis__line or-vis__line--soft" x="140" y="50" width="54" height="4" rx="2" />
-    <rect className="or-vis__chip" x="140" y="74" width="22" height="14" rx="7" />
-    <rect className="or-vis__chip or-vis__chip--b" x="168" y="74" width="22" height="14" rx="7" />
-  </svg>
-);
-
-// MIDI GPT / OpenAI in production: three language workers feeding one durable
-// orchestration hub, calling out to a model.
-const OrchestrateVisual = (
-  <svg className="or-vis" viewBox="0 0 220 120" aria-hidden="true" focusable="false">
-    <line className="or-vis__edge" x1="40" y1="26" x2="110" y2="60" />
-    <line className="or-vis__edge" x1="40" y1="60" x2="110" y2="60" />
-    <line className="or-vis__edge" x1="40" y1="94" x2="110" y2="60" />
-    <line className="or-vis__edge or-vis__edge--out" x1="110" y1="60" x2="186" y2="60" />
-    <g className="or-vis__worker"><rect x="14" y="18" width="36" height="16" rx="8" /><text x="32" y="30">Go</text></g>
-    <g className="or-vis__worker"><rect x="14" y="52" width="36" height="16" rx="8" /><text x="32" y="64">Py</text></g>
-    <g className="or-vis__worker"><rect x="14" y="86" width="36" height="16" rx="8" /><text x="32" y="98">TS</text></g>
-    <circle className="or-vis__hub" cx="110" cy="60" r="16" />
-    <circle className="or-vis__hub-ring" cx="110" cy="60" r="16" />
-    <rect className="or-vis__sink" x="186" y="50" width="20" height="20" rx="7" />
-  </svg>
-);
-
-// Full-stack app: streaming rows with a now-playing accent bar.
-const AppVisual = (
-  <svg className="or-vis" viewBox="0 0 220 120" aria-hidden="true" focusable="false">
-    <rect className="or-vis__panel" x="14" y="16" width="192" height="88" rx="14" />
-    <circle className="or-vis__disc" cx="40" cy="40" r="13" />
-    <rect className="or-vis__line" x="62" y="32" width="80" height="6" rx="3" />
-    <rect className="or-vis__line or-vis__line--soft" x="62" y="44" width="54" height="4" rx="2" />
-    <rect className="or-vis__row" x="26" y="68" width="168" height="9" rx="4.5" />
-    <rect className="or-vis__row or-vis__row--play" x="26" y="84" width="110" height="9" rx="4.5" />
-    <g className="or-vis__eq" aria-hidden="true">
-      <rect x="150" y="82" width="4" height="12" rx="2" />
-      <rect x="158" y="78" width="4" height="16" rx="2" />
-      <rect x="166" y="84" width="4" height="10" rx="2" />
-      <rect x="174" y="80" width="4" height="14" rx="2" />
-    </g>
-  </svg>
-);
-
 const PROOF: Proof[] = [
-  {
-    tag: 'OPEN SOURCE · MCP SERVER',
-    title: 'MDP',
-    desc: 'A Markdown-to-document compiler I published on npm, with an MCP server plus Claude Code and Codex plugins so agents render through it. It has a validation loop that re-checks the output against the source before returning it.',
-    href: 'https://barmoshe.github.io/mdp/',
-    open: 'Open MDP',
-    visual: MdpVisual,
-  },
-  {
-    tag: 'PRODUCTION GENAI · OPENAI',
-    title: 'MIDI GPT REST API',
-    desc: 'An LLM service in production: OpenAI behind a REST API, orchestrated with Temporal across Go, Python, and TypeScript workers as one durable, multi-step pipeline. Written up in Temporal’s Code Exchange.',
-    href: 'https://temporal.io/code-exchange/cross-language-data-processing-service-with-temporal',
-    open: 'See the writeup',
-    visual: OrchestrateVisual,
-  },
-  {
-    tag: 'FULL-STACK BACKEND',
-    title: 'Israelify',
-    desc: 'A streaming app with a Node API, auth, middleware, and a custom logger behind a React front end. Standard backend work: services, routing, and the plumbing under them.',
-    href: 'https://github.com/barmoshe/Israelify-backend',
-    open: 'View the code',
-    visual: AppVisual,
-  },
+  { tag: 'AI · Real-time', title: 'MIDI Agent', desc: 'A live call-and-response agent: it answers your MIDI phrase with editable, in-key MIDI in your DAW.', href: 'https://github.com/barmoshe/midi-agent' },
+  { tag: 'AI · Pipeline', title: 'MIDI GPT REST API', desc: 'A REST API that generates MIDI: a multi-step pipeline on Temporal across Go, Python, and TypeScript workers, calling OpenAI with retries and validation.', href: 'https://github.com/barmoshe/AI_MIDI_API' },
+  { tag: 'AI agents · Systems', title: 'Creative Harness', desc: 'An open AI-agent harness for Claude Code: skills, hooks, and tooling so one builder ships like a small team.', href: 'https://github.com/barmoshe/claude-creative-stack' },
+  { tag: 'Open source · Logic', title: 'entailer', desc: 'An open-source logic-validity toolkit: it checks whether an argument actually follows.', href: 'https://github.com/barmoshe/entailer' },
+  { tag: 'Generative · Audio', title: 'Biome', desc: 'A generative pad synth in the browser, state-machine driven. Built with Tone.js, Three.js, and Canvas2D.', href: 'https://biome-synth.lovable.app' },
+  { tag: 'Computer vision · Game', title: 'Bloom Garden', desc: 'A webcam hand-gesture game: pinch to pluck flowers, on-device MediaPipe, no video ever leaves the browser.', href: 'https://bloom-garden-five.vercel.app' },
 ];
 
 type Fit = { k: string; lead: string; body: string };
@@ -139,12 +64,12 @@ const FIT: Fit[] = [
   {
     k: 'Backend engineering',
     lead: 'Python, durable workflows, services.',
-    body: 'I write REST APIs, event-driven execution, and durable Temporal workflows that coordinate Go, Python, and TypeScript. As the primary engineer at an early-stage startup I own the full stack and the DevOps under it.',
+    body: 'I write REST APIs, event-driven execution, and durable Temporal workflows that coordinate Go, Python, and TypeScript. As the primary full-stack and DevOps engineer at Joomsy, an early-stage startup (team of five), I own the full stack and the DevOps under it.',
   },
   {
     k: 'Agents and multi-step workflows',
-    lead: 'MCP servers, tool use, orchestration.',
-    body: 'MDP ships a working MCP server plus editor plugins, the surface agents call into. The MIDI GPT pipeline chains model calls across services into one workflow. I have wired these patterns by hand, the same ones LangChain and LangGraph cover.',
+    lead: 'Tool use, orchestration, durable steps.',
+    body: 'The MIDI GPT pipeline chains OpenAI calls across Go, Python, and TypeScript services into one durable workflow on Temporal. I have wired these multi-step, tool-using patterns by hand, the same ones LangChain and LangGraph cover.',
   },
   {
     k: 'Providers, prompts, and grounding',
@@ -298,12 +223,11 @@ export default function OurRitualApp() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div className="or-pcard__screen">{p.visual}</div>
                   <div className="or-pcard__body">
                     <span className="or-pcard__tag">{p.tag}</span>
                     <h3 className="or-pcard__title">{p.title}</h3>
                     <p className="or-pcard__desc">{p.desc}</p>
-                    <span className="or-pcard__link" aria-hidden="true">{p.open} →</span>
+                    <span className="or-pcard__link" aria-hidden="true">View ↗</span>
                   </div>
                 </a>
               ))}
