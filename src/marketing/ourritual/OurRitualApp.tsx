@@ -105,7 +105,7 @@ const PROOF: Proof[] = [
   {
     tag: 'OPEN SOURCE · MCP SERVER',
     title: 'MDP',
-    desc: 'A Markdown-to-document compiler on npm, with an MCP server plus Claude Code and Codex plugins so agents render through it. A self-healing validation loop keeps the output grounded — exactly the guardrails a consumer therapy product needs.',
+    desc: 'A Markdown-to-document compiler I published on npm, with an MCP server plus Claude Code and Codex plugins so agents render through it. It has a validation loop that re-checks the output against the source before returning it.',
     href: 'https://barmoshe.github.io/mdp/',
     open: 'Open MDP',
     visual: MdpVisual,
@@ -113,7 +113,7 @@ const PROOF: Proof[] = [
   {
     tag: 'PRODUCTION GENAI · OPENAI',
     title: 'MIDI GPT REST API',
-    desc: 'An LLM product in production: OpenAI behind a REST API, orchestrated with Temporal across Go, Python, and TypeScript workers as one durable, multi-step pipeline. The agent-workflow muscle this role asks for.',
+    desc: 'An LLM service in production: OpenAI behind a REST API, orchestrated with Temporal across Go, Python, and TypeScript workers as one durable, multi-step pipeline. Written up in Temporal’s Code Exchange.',
     href: 'https://temporal.io/code-exchange/cross-language-data-processing-service-with-temporal',
     open: 'See the writeup',
     visual: OrchestrateVisual,
@@ -121,7 +121,7 @@ const PROOF: Proof[] = [
   {
     tag: 'FULL-STACK BACKEND',
     title: 'Israelify',
-    desc: 'A streaming app with a Node API, auth, middleware, and a custom logger behind a React front end. The plain, production-grade backend base under the AI work.',
+    desc: 'A streaming app with a Node API, auth, middleware, and a custom logger behind a React front end. Standard backend work: services, routing, and the plumbing under them.',
     href: 'https://github.com/barmoshe/Israelify-backend',
     open: 'View the code',
     visual: AppVisual,
@@ -132,24 +132,24 @@ type Fit = { k: string; lead: string; body: string };
 
 const FIT: Fit[] = [
   {
-    k: 'GenAI, shipped to production',
-    lead: 'Not a demo — live, on npm, with users.',
-    body: 'My day-to-day is taking a model from prompt to a product people use: MDP turns a brief into a valid artifact deterministically, with a validation loop so agents cannot produce slop. When you say "a real RAG that works in production," that is the bar I already build to.',
+    k: 'GenAI in production',
+    lead: 'Live, on npm, with users.',
+    body: 'I take models from prompt to running software. MDP compiles a brief into a document and re-checks the result against the source before returning it. The MIDI GPT service runs OpenAI behind a REST API. Both are deployed, not demos.',
   },
   {
     k: 'Backend engineering',
-    lead: 'Python, durable workflows, real services.',
-    body: 'Production-grade backend is home ground — REST APIs, event-driven execution, and durable Temporal workflows coordinating Go, Python, and TypeScript. As the primary engineer at an early-stage startup I own the full stack and the DevOps under it.',
+    lead: 'Python, durable workflows, services.',
+    body: 'I write REST APIs, event-driven execution, and durable Temporal workflows that coordinate Go, Python, and TypeScript. As the primary engineer at an early-stage startup I own the full stack and the DevOps under it.',
   },
   {
-    k: 'Agents & multi-step workflows',
+    k: 'Agents and multi-step workflows',
     lead: 'MCP servers, tool use, orchestration.',
-    body: 'MDP ships a working MCP server plus editor plugins — the same surface agents reach for. The MIDI GPT pipeline chains model calls across services into one reliable workflow. Frameworks like LangChain / LangGraph map onto patterns I have already wired by hand.',
+    body: 'MDP ships a working MCP server plus editor plugins, the surface agents call into. The MIDI GPT pipeline chains model calls across services into one workflow. I have wired these patterns by hand, the same ones LangChain and LangGraph cover.',
   },
   {
-    k: 'Providers, prompts & guardrails',
+    k: 'Providers, prompts, and grounding',
     lead: 'OpenAI · Anthropic · Google, evals, grounding.',
-    body: 'I work hands-on across the major providers, design and iterate prompt pipelines, and care about cost, latency, and reliability — caching, tokens, evals, and grounding LLM outputs so they stay safe and consistent for real people.',
+    body: 'I work across the major providers and build prompt pipelines, and I watch cost, latency, and reliability: caching, tokens, evals, and grounding outputs so they stay consistent.',
   },
 ];
 
@@ -159,18 +159,18 @@ type Step = { n: string; t: string; d: string };
 const PATHWAY: Step[] = [
   {
     n: '01',
-    t: 'Own the GenAI architecture',
-    d: 'Design the LLM pipelines and agents end-to-end, and integrate OpenAI, Anthropic, and Google behind clean production systems.',
+    t: 'GenAI architecture',
+    d: 'Designing LLM pipelines and agents end to end, integrating OpenAI, Anthropic, and Google behind production systems. I have built and shipped systems like this.',
   },
   {
     n: '02',
-    t: 'Ship features into production',
-    d: 'Move fast and hands-on, biased for action — break problems into steps and get AI features in front of users, then tighten cost, latency, and reliability.',
+    t: 'Shipping features to production',
+    d: 'Breaking problems into steps, getting AI features in front of users, then working on cost, latency, and reliability. This is how I work day to day.',
   },
   {
     n: '03',
-    t: 'Make the RAG real',
-    d: 'Build retrieval pipelines, embeddings, and grounding so the Consumer Therapy AI stays accurate, safe, and consistent — with evals and guardrails behind it.',
+    t: 'Retrieval and grounding',
+    d: 'Building retrieval pipelines, embeddings, and grounding, with evals behind them, so outputs stay accurate and consistent. I have done the grounding and validation side of this.',
   },
 ];
 
@@ -208,13 +208,13 @@ export default function OurRitualApp() {
               GENERATIVE AI ENGINEER · TEL AVIV
             </p>
             <h1 className="or-title">
-              The world&rsquo;s first Consumer Therapy AI deserves an engineer who&nbsp;
-              <span className="or-title__accent">actually ships it</span>.
+              Generative AI engineer. I build and ship&nbsp;
+              <span className="or-title__accent">LLM products in production</span>.
             </h1>
             <p className="or-lede">
-              I build Generative AI products that run in production — MCP tooling, agents, and
-              RAG that works, not a slide. Hands-on, biased for action, and fluent across the
-              backend and DevOps underneath. Here is that work, in your language.
+              I build Generative AI systems that run in production: MCP tooling, agents, and
+              retrieval pipelines, on top of the backend and DevOps that carry them. Below: a
+              few I have shipped, and where they line up with this role.
             </p>
             <div className="or-hero__cta">
               <a className="or-btn or-btn--primary or-btn--lg" href={EMAIL}>
@@ -237,7 +237,7 @@ export default function OurRitualApp() {
               </div>
               <div className="or-herocard__pill">
                 <RitualMark className="or-herocard__pill-mark" />
-                <span>Real RAG, in production</span>
+                <span>Retrieval pipelines, in production</span>
               </div>
             </div>
           </div>
@@ -246,7 +246,7 @@ export default function OurRitualApp() {
         {/* ── Trust strip ───────────────────────────────────── */}
         <div className="or-trust">
           <div className="or-trust__inner">
-            <span className="or-trust__item"><b>~1 yr+</b> building with LLMs</span>
+            <span className="or-trust__item"><b>Shipping</b> LLM products</span>
             <span className="or-trust__sep" />
             <span className="or-trust__item">Open source, <b>on npm</b></span>
             <span className="or-trust__sep" />
@@ -261,10 +261,10 @@ export default function OurRitualApp() {
           <div className="or-wrap">
             <header className="or-section__head">
               <p className="or-kicker">The pathway</p>
-              <h2 className="or-h2">The role, A to Z — and how I&rsquo;d walk it.</h2>
+              <h2 className="or-h2">What the role covers, and where I have done it.</h2>
               <p className="or-sub">
-                OurRitual builds every journey as a personalized pathway. Here is the one this
-                role describes, mapped to how I&rsquo;d lead the AI effort end-to-end.
+                OurRitual frames each journey as a pathway. Here is the one this role describes,
+                with what I have built against each part.
               </p>
             </header>
             <ol className="or-path">
@@ -285,9 +285,9 @@ export default function OurRitualApp() {
         <section id="work" className="or-section or-section--soft">
           <div className="or-wrap">
             <header className="or-section__head">
-              <p className="or-kicker">Proof, not claims</p>
+              <p className="or-kicker">Selected work</p>
               <h2 className="or-h2">A few things I&rsquo;ve shipped.</h2>
-              <p className="or-sub">Each one is live. Open it and check for yourself.</p>
+              <p className="or-sub">Each one is live. Open it and look.</p>
             </header>
             <div className="or-proof__grid">
               {PROOF.map((p) => (
@@ -322,8 +322,8 @@ export default function OurRitualApp() {
         <section id="fit" className="or-section">
           <div className="or-wrap">
             <header className="or-section__head">
-              <p className="or-kicker">Why me, for this role</p>
-              <h2 className="or-h2">Your posting, mapped to work I&rsquo;ve already done.</h2>
+              <p className="or-kicker">Experience, mapped to the role</p>
+              <h2 className="or-h2">What the posting asks for, and where I&rsquo;ve done it.</h2>
             </header>
             <div className="or-fit__grid">
               {FIT.map((f, i) => (
@@ -342,10 +342,9 @@ export default function OurRitualApp() {
         <section className="or-cta">
           <div className="or-cta__inner">
             <RitualMark className="or-cta__mark" />
-            <h2 className="or-cta__title">Let&rsquo;s build it together.</h2>
+            <h2 className="or-cta__title">Let&rsquo;s talk.</h2>
             <p className="or-cta__sub">
-              If the work above looks like the engineer you want leading the AI effort, I&rsquo;m
-              one message away — a great human, all into teamwork, ready to do.
+              If this lines up with what you&rsquo;re hiring for, I&rsquo;m one message away.
             </p>
             <div className="or-cta__links">
               <a className="or-btn or-btn--oncoral" href={EMAIL}>Email me</a>

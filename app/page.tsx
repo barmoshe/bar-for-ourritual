@@ -24,9 +24,9 @@ const body = Mulish({
 // language — warm cream surface, the signature coral #E5654B, editorial serif
 // headlines, rounded pills, soft photography-style cards. Not part of the public
 // site map, noindex so it stays a private, shareable link sent to the OurRitual team.
-const ogTitle = "Bar Moshe × OurRitual — Generative AI Engineer";
+const ogTitle = "Bar Moshe × OurRitual · Generative AI Engineer";
 const ogDescription =
-  "Bar Moshe, AI builder & full-stack engineer. I ship GenAI products to production — MCP tooling, agents, and RAG that actually works. Here is that work, in OurRitual's language.";
+  "Bar Moshe, Generative AI and full-stack engineer. I build and ship LLM systems in production: MCP tooling, agents, and retrieval pipelines. A few I have shipped, mapped to this role.";
 
 export const metadata: Metadata = {
   title: ogTitle,

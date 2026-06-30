@@ -8,7 +8,7 @@ import { ImageResponse } from 'next/og';
 // tags automatically.
 
 export const alt =
-  'Bar Moshe for OurRitual — Generative AI Engineer. GenAI in production, MCP tooling, agents, and RAG that actually works.';
+  'Bar Moshe for OurRitual, Generative AI Engineer. LLM systems in production: MCP tooling, agents, and retrieval pipelines.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -76,10 +76,10 @@ export default function Image() {
                 maxWidth: '1000px',
               }}
             >
-              The Consumer Therapy AI, built by someone who ships it.
+Generative AI engineer. I build and ship LLM products in production.
             </div>
             <div style={{ display: 'flex', fontSize: 31, color: '#5c5249', marginTop: '22px', maxWidth: '940px', lineHeight: 1.35 }}>
-              GenAI in production — MCP tooling, agents, and RAG that actually works.
+              LLM systems in production: MCP tooling, agents, and retrieval pipelines.
             </div>
           </div>
 
