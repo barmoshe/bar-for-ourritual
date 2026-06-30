@@ -1,6 +1,9 @@
 # bar-for-ourritual
 
-An ad-hoc job-application page for Bar Moshe, built in OurRitual's warm brand. Not affiliated with OurRitual.
+An ad-hoc, personalized job-application page Bar Moshe built for the **Generative AI
+Engineer** role at **OurRitual**, rebuilt in OurRitual's warm brand (cream + coral,
+editorial serif, centered hero with the "Pathway" role framing). Not affiliated with
+OurRitual.
 
 Extracted from the `bar_builds` workshop site into this standalone sibling repo
 so it deploys on its own Vercel project, matching the `bar-for-*` pattern.
