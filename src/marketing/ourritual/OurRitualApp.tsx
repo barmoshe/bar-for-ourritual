@@ -35,7 +35,7 @@ function RitualMark({ className }: { className?: string }) {
 
 const EMAIL =
   'mailto:1barmoshe1@gmail.com?subject=Generative%20AI%20Engineer%20application%20from%20Bar%20Moshe';
-const CV = '/Bar_Moshe_Resume.pdf';
+const CV = '/Bar_Moshe_CV_OurRitual.pdf';
 
 type Proof = {
   tag: string;
