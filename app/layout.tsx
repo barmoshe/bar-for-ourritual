@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 // Root layout. Page-level metadata (fonts, copy) lives in app/page.tsx.
@@ -13,7 +14,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="ltr">
-      <body>{children}</body>
+      <body>
+    <Script
+      src="https://bar-for-companies.vercel.app/track.js"
+      data-bar-for-id="ourritual"
+      strategy="afterInteractive"
+    />
+{children}</body>
     </html>
   );
 }
